@@ -322,7 +322,7 @@ main aside p {
   color: hsl(240, 100%, 5%);
 }
 
-@media (min-width: 625px) {
+@media (min-width: 650px) {
   h1 {
     font-size: 56px;
     line-height: 56px;
@@ -358,8 +358,7 @@ main aside p {
   main {
     display: grid;
     grid-template-columns: 66% 31.5%;
-    grid-template-rows: 300px 1fr;
-    gap: 2.5%;
+    gap: 0 2.5%;
     margin-bottom: 24px;
   }
   main section {

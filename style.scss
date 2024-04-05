@@ -68,9 +68,9 @@ h3 {
 }
 
 .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	cursor: pointer;
 	width: 185px;
 	height: 48px;
@@ -214,7 +214,7 @@ main {
 	}
 }
 
-@media (min-width: 625px) {
+@media (min-width: 650px) {
 	h1 {
 		font-size: 56px;
 		line-height: 56px;
@@ -225,9 +225,9 @@ main {
 		line-height: 40px;
 	}
 
-    .container {
-        margin-top: 64px;
-    }
+	.container {
+		margin-top: 64px;
+	}
 
 	header {
 		.header__logo {
@@ -262,8 +262,8 @@ main {
 	main {
 		display: grid;
 		grid-template-columns: 66% 31.5%;
-		grid-template-rows: 300px 1fr;
-		gap: 2.5%;
+
+		gap: 0 2.5%;
 		margin-bottom: 24px;
 
 		section {
