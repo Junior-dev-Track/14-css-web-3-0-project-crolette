@@ -40,7 +40,6 @@ section {
 }
 
 img {
-	// aspect-ratio: 1;
 	max-width: 100%;
 	height: auto;
 	object-fit: cover;
@@ -68,25 +67,27 @@ h3 {
 	margin-bottom: 16px;
 }
 
-button {
-	text-transform: uppercase;
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	cursor: pointer;
+	width: 185px;
+	height: 48px;
+	background-color: $primary;
 	color: $heading-white;
+	text-transform: uppercase;
 	letter-spacing: 0.0438em;
 	font-weight: 700;
 	font-size: 14px;
 	line-height: 24px;
-	width: 185px;
-	height: 48px;
-	background-color: $primary;
 }
 
 header {
 	width: 100%;
-	height: 28px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	// margin-bottom: 26px;
 	position: relative;
 
 	.header__logo {
@@ -94,40 +95,42 @@ header {
 	}
 
 	.menu {
+		#menu__hamburger {
+			cursor: pointer;
+		}
+
 		nav {
-			display: none;
+			padding-top: 24px;
+			// display: none;
 			background-color: $bg-colour;
 			height: 100vh;
-
-			&.active {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: absolute;
+			top: 56px;
+			left: 0;
+			width: 100%;
+			&.inactive {
+				display: none;
+			}
+			ul {
 				display: flex;
 				flex-direction: column;
-				align-items: center;
-				position: absolute;
-				top: 56px;
+				gap: 32px;
 				left: 0;
-				width: 100%;
 
-				ul {
-					display: flex;
-					flex-direction: column;
-					gap: 32px;
-					left: 0;
+				li {
+					a {
+						color: $link-color;
 
-					li {
-						// margin-bottom: 24px;
+						&:hover {
+							color: $link-color-hover;
+						}
 
-						a {
-							color: $link-color;
-
-							&:hover {
-								color: $link-color-hover;
-							}
-
-							&:active {
-								// color: $link-color-active;
-								color: red;
-							}
+						&:active {
+							// color: $link-color-active;
+							color: red;
 						}
 					}
 				}
@@ -141,6 +144,10 @@ main {
 	grid-template-columns: 1fr;
 	gap: 64px;
 	margin-bottom: 24px;
+
+	img {
+		width: 100%;
+	}
 
 	section {
 		display: flex;
@@ -207,36 +214,80 @@ main {
 	}
 }
 
-@media (min-width: 425px) {
+@media (min-width: 625px) {
+	h1 {
+		font-size: 56px;
+		line-height: 56px;
+	}
+
+	h2 {
+		font-size: 40px;
+		line-height: 40px;
+	}
+
 	header {
-
-
+		.header__logo {
+			height: 40px;
+		}
 		.menu {
-
-            #menu__hamburger {
-                display: none;
-            }
+			#menu__hamburger {
+				display: none;
+			}
 
 			nav {
 				display: block;
 				background-color: $bg-colour;
 				height: 100%;
 
-				&.active {
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-					position: relative;
-                    top: unset;
-					width: 100%;
+				flex-direction: row;
+				position: relative;
+				top: unset;
+				width: 100%;
 
-					ul {
-						flex-direction: row;
-						gap: 32px;
-						left: 0;
-					}
+				&.inactive {
+					display: unset;
+				}
+
+				ul {
+					flex-direction: row;
 				}
 			}
 		}
+	}
+
+	main {
+		display: grid;
+		grid-template-columns: 66% 31.5%;
+		grid-template-rows: 300px 1fr;
+		gap: 2.5%;
+		margin-bottom: 24px;
+
+		section {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			flex-direction: column;
+			gap: 30px;
+
+			.main__picture {
+				grid-column: span 2;
+			}
+
+			.main__content {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+			}
+		}
+
+		aside {
+			grid-row: span 2;
+			gap: 24px;
+		}
+	}
+
+	.articles {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 34px;
 	}
 }
